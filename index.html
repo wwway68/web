@@ -1,0 +1,125 @@
+<!DOCTYPE html>  
+ <html>  
+      <head>  
+           <title>Webslesson Tutorial | Autocomplete textbox using jQuery, PHP and MySQL</title>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+		    
+           <style>  
+           ul{  
+                background-color:#eee;  
+                cursor:pointer;  
+           }  
+           li{  
+                padding:12px;  
+           }  
+           </style>  
+      
+	  
+      <body>  
+           <br /><br />  
+		   <meta charset="UTF-8">
+           <div class="container" style="width:900px;">  
+                <h3 align="left">Autocomplete textbox using jQuery</h3><br />  
+				
+				
+	  <body>
+	  
+	  <form action="insert.php" method="POST">	
+	  
+           <meta charset="UTF-8">
+		   <title> DatePIcker</title>
+		   <link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+		   
+		   
+		   <input type = "datepicker" placeholder = "연월일선택" name = "date" id = "datepicker" style="width:100px" background-color="black">
+		   <script type = "text/javascript" src="jquery-3.4.1.min.js"></script>
+		   <script type = "text/javascript" src="jquery-ui.min.js"></script>
+           		   
+		   <script>
+		   
+		     $('#datepicker').datepicker({
+			 dateFormat: "yy-mm-dd",
+		     changeMonth: true,
+		     changeYear: true,
+			 dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토" ],
+			 monthNamesShort: [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" ],
+			});
+		   
+		   </script>
+		   		  
+	  </body>  
+	  </body>  
+						   <br><br/> 	
+         			   
+						
+                <label>주소입력</label>  
+                <input type="text" name="addr" id="addr" class="form-control" placeholder="Enter addr Name" style="width:500px">  
+                <div id="addrList"></div>  <br><br/> 
+												
+				<label>상세주소</label>  
+                <input type="text" name="addr2" id="addr2" class="form-control" placeholder="Enter addr2 Name" style="width:500px">  
+                <div id="addrList2"></div>  <br><br/> 
+										
+				<label>단지입력</label>  
+                <input type="text" name="comp" id="comp" class="form-control" placeholder="Enter comp Name" style="width:500px" >  
+                <div id="compList"></div>  <br><br/> 
+				
+				
+				
+                 <input type="submit" name = "submit"  value="submit" align="center"> 
+				 
+		   </form> 
+           </div> 
+	</body>  
+		
+			</head>    
+    	 
+    </html>  
+	
+		   
+	
+ <script>  
+ $(document).ready(function(){ $('#addr').keyup(function(){  
+           var query = $(this).val();  
+           if(query != ''){ $.ajax({ 
+					 url:"search11.php",  
+                     method:"POST",  
+                     data:{query:query},  
+                     success:function(data)  
+                     {    $('#addrList').fadeIn();  
+                          $('#addrList').html(data);  
+                     }  
+                });  
+           }  
+      });  
+      $(document).on('click', '#addrList li', function(){  
+           $('#addr').val($(this).text());  
+           $('#addrList').fadeOut(); 
+	      });  
+      });  
+ </script>  
+ 
+ 
+ <script>  
+ $(document).ready(function(){ $('#comp').keyup(function(){  
+           var query = $(this).val();  
+           if(query != '') { $.ajax({  
+                     url:"search12.php",  
+                     method:"POST",  
+                     data:{query:query},  
+                     success:function(data) {  
+                          $('#compList').fadeIn();  
+                          $('#compList').html(data);  
+                     }  
+                });  
+           }  
+      });  
+      $(document).on('click', '#compList li', function(){  
+           $('#comp').val($(this).text());  
+           $('#compList').fadeOut();    
+	  });  
+ });  
+ </script>  
+   

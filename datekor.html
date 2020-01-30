@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+ <html>  
+      <head>  
+           
+           <meta charset="UTF-8">
+		   <title> DatePIcker</title>
+		   <link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+		   
+		   sfsfsfsf <input type = "text" placeholder = "연월일선택" id = "datepicker">
+		   <script type = "text/javascript" src="jquery-3.4.1.min.js"></script>
+		   <script type = "text/javascript" src="jquery-ui.min.js"></script>
+           
+		   
+		   <script>
+		   
+		     $('#datepicker').datepicker({
+			 dateFormat: "yy-mm-dd",
+		     changeMonth: true,
+		     changeYear: true,
+			 dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토" ],
+			 monthNamesShort: [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" ],
+			});
+		   
+		   </script>
+		   
+		   <script>
+		   $.datepicker.formatDate( "yy-mm-dd");
+		   </script>
+	</body>  
+		
+
+</head>    
+ </html>
+ 
+ 
+   
